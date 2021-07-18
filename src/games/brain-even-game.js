@@ -21,6 +21,6 @@ const evenGame = () => {
       return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Lets try again, ${userName}`);
     }
   }
-  return console.log(`Congratulations, ${userName}`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 export default evenGame;
