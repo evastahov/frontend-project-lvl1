@@ -1,10 +1,9 @@
 import readlineSync from 'readline-sync';
-import getTheName from '../cli.js';
+import getName from '../cli.js';
+import {
+  minNum, maxNum, numberOfRounds, getRandomNum, printResult,
+} from '../index.js';
 
-const minNum = 1;
-const maxNum = 100;
-const numberOfRounds = 3;
-const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const greatestComDiv = (num1, num2) => {
   if (num2 > 0) {
     const k = num1 % num2;
@@ -13,20 +12,16 @@ const greatestComDiv = (num1, num2) => {
   return Math.abs(num1);
 };
 const gcdGame = () => {
-  const userName = getTheName();
+  const userName = getName();
   console.log('Find the greatest common divisor of given numbers.');
   for (let i = 1; i <= numberOfRounds; i += 1) {
     const num1 = getRandomNum(minNum, maxNum);
     const num2 = getRandomNum(minNum, maxNum);
     const question = `${num1} ${num2}`;
     console.log(`Question: ${question}`);
-    const answer = Number(readlineSync.question('Your answer: '));
-    const correctAnswer = greatestComDiv(num1, num2);
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Lets try again, ${userName}`);
-    }
+    const userAnswer = Number(readlineSync.question('Your answer: '));
+    const getCorrectAnswer = greatestComDiv(num1, num2);
+    printResult(userAnswer, getCorrectAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };

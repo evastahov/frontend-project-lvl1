@@ -1,10 +1,9 @@
 import readlineSync from 'readline-sync';
-import getTheName from '../cli.js';
+import getName from '../cli.js';
+import {
+  minNum, maxNum, numberOfRounds, getRandomNum, printResult,
+} from '../index.js';
 
-const minNum = 1;
-const maxNum = 100;
-const numberOfRounds = 3;
-const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -18,18 +17,14 @@ const isPrime = (number) => {
 };
 
 const primeGame = () => {
-  const userName = getTheName();
+  const userName = getName();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 1; i <= numberOfRounds; i += 1) {
     const question = getRandomNum(minNum, maxNum);
     console.log(`Question: ${question}`);
-    const answer = String(readlineSync.question('Your answer: '));
-    const correctAnswer = isPrime(question) ? 'yes' : 'no';
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Lets try again, ${userName}`);
-    }
+    const userAnswer = String(readlineSync.question('Your answer: '));
+    const getCorrectAnswer = isPrime() ? 'yes' : 'no';
+    printResult(userAnswer, getCorrectAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };
