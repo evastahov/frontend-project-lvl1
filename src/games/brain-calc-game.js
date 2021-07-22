@@ -1,11 +1,9 @@
 import readlineSync from 'readline-sync';
 import getName from '../cli.js';
-import { printResult } from '../index';
+import {
+  minNum, maxNum, numberOfRounds, getRandomNum, printResult,
+} from '../index.js';
 
-const minNum = 1;
-const maxNum = 100;
-const numberOfRounds = 3;
-const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const operators = ['+', '-', '*'];
 
 const calcGame = () => {
@@ -17,19 +15,21 @@ const calcGame = () => {
     const randomOperator = operators[getRandomNum(0, operators.length - 1)];
     const question = `${num1} ${randomOperator} ${num2}`;
     console.log(`Question: ${question}`);
-    const userAnswer = Number(readlineSync.question('Your answer: '));
-    let getCorrectAnswer = 0;
+    const userAnswer = readlineSync.question('Your answer: ');
+    let correctAnswer = '';
     if (randomOperator === '+') {
-      getCorrectAnswer = num1 + num2;
+      correctAnswer = num1 + num2;
     }
     if (randomOperator === '-') {
-      getCorrectAnswer = num1 - num2;
+      correctAnswer = num1 - num2;
     }
     if (randomOperator === '*') {
-      getCorrectAnswer = num1 * num2;
+      correctAnswer = num1 * num2;
     }
-    printResult(userAnswer, getCorrectAnswer, userName);
+    printResult(userAnswer, correctAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };
+
+calcGame();
 export default calcGame;

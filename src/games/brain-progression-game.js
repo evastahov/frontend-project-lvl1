@@ -25,11 +25,11 @@ const progressionGame = () => {
   for (let i = 1; i <= numberOfRounds; i += 1) {
     const randomNum = getRandomNum(0, 9);
     const progression = createProgression(numCount);
-    const getCorrectAnswer = String(progression.splice(randomNum, 1, '..'));
+    const correctAnswer = String(progression.splice(randomNum, 1, '..'));
     const question = getMask(progression, randomNum).join(' ');
     console.log(`Question: ${question}`);
     const userAnswer = String(readlineSync.question('Your answer: '));
-    printResult(userAnswer, getCorrectAnswer, userName);
+    printResult(userAnswer, correctAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };

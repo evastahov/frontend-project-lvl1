@@ -23,8 +23,8 @@ const primeGame = () => {
     const question = getRandomNum(minNum, maxNum);
     console.log(`Question: ${question}`);
     const userAnswer = String(readlineSync.question('Your answer: '));
-    const getCorrectAnswer = isPrime() ? 'yes' : 'no';
-    printResult(userAnswer, getCorrectAnswer, userName);
+    const correctAnswer = isPrime() ? 'yes' : 'no';
+    printResult(userAnswer, correctAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };

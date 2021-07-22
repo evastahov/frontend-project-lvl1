@@ -20,8 +20,8 @@ const gcdGame = () => {
     const question = `${num1} ${num2}`;
     console.log(`Question: ${question}`);
     const userAnswer = Number(readlineSync.question('Your answer: '));
-    const getCorrectAnswer = greatestComDiv(num1, num2);
-    printResult(userAnswer, getCorrectAnswer, userName);
+    const correctAnswer = greatestComDiv(num1, num2);
+    printResult(userAnswer, correctAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };

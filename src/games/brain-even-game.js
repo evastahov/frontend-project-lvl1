@@ -12,8 +12,8 @@ const evenGame = () => {
     const isEven = question % 2 === 0;
     console.log(`Question: ${question}`);
     const userAnswer = String(readlineSync.question('Your answer: '));
-    const getCorrectAnswer = isEven ? 'yes' : 'no';
-    printResult(userAnswer, getCorrectAnswer, userName);
+    const correctAnswer = isEven ? 'yes' : 'no';
+    printResult(userAnswer, correctAnswer, userName);
   }
   return console.log(`Congratulations, ${userName}!`);
 };
