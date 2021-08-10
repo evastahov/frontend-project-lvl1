@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import getName from '../cli.js';
 import {
-  minNum, maxNum, numberOfRounds, getRandomNum, printResult,
+  minNum, maxNum, numberOfRounds, getRandomNum,
 } from '../index.js';
 
 const isPrime = (number) => {
@@ -23,8 +23,14 @@ const primeGame = () => {
     const question = getRandomNum(minNum, maxNum);
     console.log(`Question: ${question}`);
     const userAnswer = String(readlineSync.question('Your answer: '));
-    const correctAnswer = isPrime() ? 'yes' : 'no';
-    printResult(userAnswer, correctAnswer, userName);
+    const correctAnswer = isPrime(question) ? 'yes' : 'no';
+    const correct = 'Correct!';
+    const wrong = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Lets try again, ${userName}`;
+    if (userAnswer === correctAnswer) {
+      console.log(correct);
+    } else {
+      return console.log(wrong);
+    }
   }
   return console.log(`Congratulations, ${userName}!`);
 };

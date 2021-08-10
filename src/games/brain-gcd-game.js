@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import getName from '../cli.js';
 import {
-  minNum, maxNum, numberOfRounds, getRandomNum, printResult,
+  minNum, maxNum, numberOfRounds, getRandomNum,
 } from '../index.js';
 
 const greatestComDiv = (num1, num2) => {
@@ -21,7 +21,13 @@ const gcdGame = () => {
     console.log(`Question: ${question}`);
     const userAnswer = Number(readlineSync.question('Your answer: '));
     const correctAnswer = greatestComDiv(num1, num2);
-    printResult(userAnswer, correctAnswer, userName);
+    const correct = 'Correct!';
+    const wrong = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Lets try again, ${userName}`;
+    if (userAnswer === correctAnswer) {
+      console.log(correct);
+    } else {
+      return console.log(wrong);
+    }
   }
   return console.log(`Congratulations, ${userName}!`);
 };
