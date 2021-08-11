@@ -1,7 +1,7 @@
 {
   "name": "hex",
   "version": "1.0.0",
-  "description": "",
+  "description": "«Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга.",
   "main": "src/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
