@@ -7,14 +7,4 @@
 ```sh
 make install
 ```
-
-
-[![asciicast](https://asciinema.org/a/lxRxvCpe3xjszUpAO5kzuXiQX.svg)](https://asciinema.org/a/lxRxvCpe3xjszUpAO5kzuXiQX)
-
-[![asciicast](https://asciinema.org/a/hK1xbhDK01yj9iXrMOld5Nn5f.svg)](https://asciinema.org/a/hK1xbhDK01yj9iXrMOld5Nn5f)
-
-[![asciicast](https://asciinema.org/a/mLR77qCczYEPKej2KNDUVEJj1.svg)](https://asciinema.org/a/mLR77qCczYEPKej2KNDUVEJj1)
-
-[![asciicast](https://asciinema.org/a/Qt9lwk6ZwnZSpmD5ro7kA87sr.svg)](https://asciinema.org/a/Qt9lwk6ZwnZSpmD5ro7kA87sr)
-
-[![asciicast](https://asciinema.org/a/PIlJoP4I9fBf5yiY4vh5mu2GP.svg)](https://asciinema.org/a/PIlJoP4I9fBf5yiY4vh5mu2GP)
+<a href="https://asciinema.org/a/PIlJoP4I9fBf5yiY4vh5mu2GP?preload=1" target="_blank"><img src="https://asciinema.org/a/PIlJoP4I9fBf5yiY4vh5mu2GP.svg" width = "700"/></a>
