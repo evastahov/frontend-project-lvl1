@@ -1,9 +1,8 @@
-import readlineSync from 'readline-sync';
-import getName from '../cli.js';
 import {
-  minNum, maxNum, numberOfRounds, getRandomNum,
+  minNum, maxNum, getRandomNum,
 } from '../index.js';
 
+export const gameRules = 'What number is missing in the progression?';
 const numCount = 10;
 const createProgression = (maxNumCount) => {
   const firstNum = getRandomNum(minNum, maxNum);
@@ -14,29 +13,16 @@ const createProgression = (maxNumCount) => {
   }
   return result;
 };
+
 const getMask = (arr, indexNum) => {
   arr.splice(indexNum, 1, '..');
   return arr;
 };
 
-const progressionGame = () => {
-  const userName = getName();
-  console.log('What number is missing in the progression?');
-  for (let i = 1; i <= numberOfRounds; i += 1) {
-    const randomNum = getRandomNum(0, 9);
-    const progression = createProgression(numCount);
-    const correctAnswer = String(progression.splice(randomNum, 1, '..'));
-    const question = getMask(progression, randomNum).join(' ');
-    console.log(`Question: ${question}`);
-    const userAnswer = String(readlineSync.question('Your answer: '));
-    const correct = 'Correct!';
-    const wrong = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Lets try again, ${userName}`;
-    if (userAnswer === correctAnswer) {
-      console.log(correct);
-    } else {
-      return console.log(wrong);
-    }
-  }
-  return console.log(`Congratulations, ${userName}!`);
+export const generateData = () => {
+  const randomNum = getRandomNum(0, 9);
+  const progression = createProgression(numCount);
+  const answer = String(progression.splice(randomNum, 1, '..'));
+  const question = getMask(progression, randomNum).join(' ');
+  return [question, answer];
 };
-export default progressionGame;
