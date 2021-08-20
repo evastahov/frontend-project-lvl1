@@ -5,15 +5,21 @@ import {
 export const gameRules = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 const getCorrectAnswer = (num1, operator, num2) => {
-  if (operator === '+') {
-    return num1 + num2;
+  let result = 0;
+  switch (operator) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    default:
+      return null;
   }
-  if (operator === '-') {
-    return num1 - num2;
-  }
-  if (operator === '*') {
-    return num1 * num2;
-  }
+  return result;
 };
 
 export const generateData = () => {
