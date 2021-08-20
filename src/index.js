@@ -11,7 +11,7 @@ const runGame = (rules, gameData) => {
   console.log(`Hello, ${userName}!`);
   console.log(rules);
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const [question, answer] = gameData;
+    const [question, answer] = gameData();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const correct = 'Correct!';
