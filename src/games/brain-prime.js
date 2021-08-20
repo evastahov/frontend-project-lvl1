@@ -18,6 +18,6 @@ const isPrime = (num) => {
 
 export const generateData = () => {
   const question = getRandomNum(minNum, maxNum);
-  const answer = isPrime(question) % 2 === 0 ? 'yes' : 'no';
+  const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
