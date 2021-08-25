@@ -5,7 +5,7 @@ const maxNum = 10;
 const progressionLength = 10;
 const firstNum = getRandomNum(minNum, maxNum);
 const stepCount = getRandomNum(minNum, maxNum);
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const createProgression = (first, step, maxLength) => {
   const result = [];
@@ -20,7 +20,7 @@ const getMask = (arr, indexNum) => {
   return arr;
 };
 
-export const generateData = () => {
+const generateData = () => {
   const randomNum = getRandomNum(0, 9);
   const progression = createProgression(firstNum, stepCount, progressionLength);
   const answer = String(progression.splice(randomNum, 1, '..'));
