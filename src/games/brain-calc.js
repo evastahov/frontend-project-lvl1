@@ -5,21 +5,16 @@ import {
 export const gameRules = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 const getCorrectAnswer = (num1, operator, num2) => {
-  let result = 0;
   switch (operator) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
-      return null;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return result;
 };
 
 export const generateData = () => {
