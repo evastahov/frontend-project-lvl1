@@ -1,9 +1,10 @@
-import {
-  minNum, maxNum, getRandomNum,
-} from '../index.js';
+import runGame, { getRandomNum } from '../index.js';
 
-export const gameRules = 'What is the result of the expression?';
+const minNum = 1;
+const maxNum = 10;
+const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
+
 const getCorrectAnswer = (num1, operator, num2) => {
   switch (operator) {
     case '+':
@@ -17,7 +18,7 @@ const getCorrectAnswer = (num1, operator, num2) => {
   }
 };
 
-export const generateData = () => {
+const generateData = () => {
   const num1 = getRandomNum(minNum, maxNum);
   const num2 = getRandomNum(minNum, maxNum);
   const randomOperator = operators[getRandomNum(0, operators.length - 1)];
@@ -25,3 +26,5 @@ export const generateData = () => {
   const answer = String(getCorrectAnswer(num1, randomOperator, num2));
   return [question, answer];
 };
+
+export default () => runGame(description, generateData());

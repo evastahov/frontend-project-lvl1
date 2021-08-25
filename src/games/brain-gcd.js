@@ -1,8 +1,9 @@
-import {
-  minNum, maxNum, getRandomNum,
-} from '../index.js';
+import runGame, { getRandomNum } from '../index.js';
 
-export const gameRules = 'Find the greatest common divisor of given numbers.';
+const minNum = 1;
+const maxNum = 10;
+
+export const description = 'Find the greatest common divisor of given numbers.';
 
 const greatestComDiv = (num1, num2) => {
   if (num2 > 0) {
@@ -19,3 +20,5 @@ export const generateData = () => {
   const answer = String(greatestComDiv(num1, num2));
   return [question, answer];
 };
+
+export default () => runGame(description, generateData());
