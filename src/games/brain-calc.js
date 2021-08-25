@@ -2,8 +2,8 @@ import runGame, { getRandomNum } from '../index.js';
 
 const minNum = 1;
 const maxNum = 10;
-const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
+const description = 'What is the result of the expression?';
 
 const getCorrectAnswer = (num1, operator, num2) => {
   switch (operator) {

@@ -2,7 +2,6 @@ import runGame, { getRandomNum } from '../index.js';
 
 const minNum = 1;
 const maxNum = 10;
-
 export const description = 'Find the greatest common divisor of given numbers.';
 
 const greatestComDiv = (num1, num2) => {
