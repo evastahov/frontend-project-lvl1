@@ -1,4 +1,5 @@
-import runGame, { getRandomNum } from '../index.js';
+import runGame from '../index.js';
+import getRandomNum from '../utils.js';
 
 const minNum = 1;
 const maxNum = 10;
